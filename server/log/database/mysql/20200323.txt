@@ -1,0 +1,224 @@
+----------- 2020-03-23 08:08:25 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:25 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:25 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:26 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:26 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:26 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:37 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:38 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:38 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:38 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:38 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:38 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:41 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:41 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:41 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:41 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:48 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:08:49 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:11:31 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:11:32 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:11:32 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 08:11:32 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:29:26 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:29:26 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:29:26 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:29:34 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:35:39 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:35:39 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:35:39 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:37:16 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:37:16 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+
+----------- 2020-03-23 14:37:16 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1049] Unknown database 'fly_app1'
+sql:
+

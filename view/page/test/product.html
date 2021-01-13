@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	  
+	  	<!--Meta区-->
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<!--标题区-->
+		<title class="pageNameClass"></title>
+		
+		<!--样式引用区-->
+		<link rel="stylesheet" href="../../config/public.css"  media="all">
+		<link rel="stylesheet" href="../../frame/layer/css/layui.css"  media="all">
+		<link rel="stylesheet" href="../../frame/template/template.css"  media="all">
+	  
+	  	<!--JS模板区:会将通用数据模板加载到此处-->
+	  	<div id="javascriptModelId"></div>
+	  	
+	  	<!--JS引用区:JS按照依赖顺序引入，请勿调整顺序-->
+		<script type="text/javascript" src="../../frame/jquery/jquery-1.8.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/layer/layui.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../config/config.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../frame/fly/fly-1.5.1.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/public/public-1.5.1.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/template/template.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../json/jsoncity.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/submit/datalist.js" charset="utf-8"></script>
+		
+		<!--<script type="text/javascript" src="../../login.js"></script>-->
+		
+	</head>
+	
+	<body>
+	    
+	  <div class="div-body">
+	  	
+  		<!--Top:放置网页标题和功能按钮-->
+		<blockquote class="layui-elem-quote layui-text"> 
+			<span style="margin-left: 2px;">产品管理</span> 
+			<span style="margin-left: 2px;"></span>
+			<a href="javascript:history.back(-1)" style="display: inline;">[ 返回 ]</a> 
+			<a href="javascript:void(0)" onclick="location.reload()" style="display: inline;">[ 刷新 ]</a> 
+			<a href="javascript:void(0)" onclick="window.open(window.location.href)" style="display: inline;">[ 新开 ]</a> 
+			<span id="iPageName"></span>
+		</blockquote>
+		
+		<!-- 盒子DIV:内边距20px -->
+		<div class="layui-form layui-form-pane box-padding-20" style="padding-top:0px;">
+			
+			<div class="margin-bottom-10">
+				<button class="layui-btn" id="iRoleAdminRecodeAdd">添加记录</button>
+			</div>
+			
+			
+		    <div class="table-title">
+		    	产品管理列表
+		    	<span><a class="color-blue float-right" id="iModeComplete">完全模式</a></span>
+		    	<span id="iLoadImage">
+        			<i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop color-blue-load">&#xe63d;</i>
+        		</span>
+		    </div>
+		    <div class="table-search action-bar">
+		    	<div class="float-left title" id="iFieldSelect">搜索字段</div>
+		    	<div class="float-left stand-alone" id="iSelectOption">
+					<select lay-filter="aihao" id="iSearchField" lay-search=""> </select>
+				</div>
+				<div class="float-left title margin-left-10" id="iSearchTitle">搜索内容</div>
+		    	<div class="float-left stand-alone cSearchInput">
+					<input type="text" class="text" id="iSearchValue" autocomplete="off" placeholder=""/>
+				</div>
+				<button class="layui-btn margin-left-10" id="iAccessUserSearch"><i class="layui-icon">&#xe615;</i>搜索</button>
+				<button class="layui-btn" id="iAccessPagingAll">全部记录</button>
+				<div class="clear"></div>
+		    </div>
+			<table class="layui-table layui-table-margin-0" id="iLayTable" lay-filter="iLayTable"></table>
+
+		</div>
+	  </div>    
+	  
+	         
+	</body>
+	
+	<!-------------------------------- 配置:根据页面发生变化 -------------------------------->
+	
+	<!-- Layui:PC模板:操作-->
+	<script type="text/html" id="templetOperation">
+		<!--<a class="layui-btn layui-btn-xs layui-btn-xs" lay-event="layGroupMember">添加组成员</a>-->
+		<a class="layui-btn layui-btn-xs layui-btn-xs" lay-event="layDataUpdate">修改</a>
+		<a class="layui-btn layui-btn-xs layui-btn-xs" lay-event="layDataInfor">详细信息</a>
+		<a class="layui-btn layui-btn-xs layui-btn-xs layui-btn-danger layui-hide" lay-event="layDataDelete">删除</a>
+	</script>
+	
+	<!-- Layui:WAP模板:操作-->
+	<script type="text/html" id="templetOperationWap">
+		<a class="layui-btn layui-btn-xs layui-btn-xs" lay-event="layDataInfor">详细信息</a>
+		<a class="layui-btn layui-btn-xs layui-btn-xs layui-btn-danger layui-hide" lay-event="layDataDelete">删除</a>
+	</script>
+
+	<!-- 数据表：管理员用户相关操作 -->
+	<script type="text/javascript">
+		
+		//--- 页面参数 ---
+		var pId = fly.getParameter("id");
+		var vILine = "visitor";
+		var vIMethod = "testproduct";
+		
+		//--- 页面配置 ---
+		//数据接口：添加
+		var vConfigAdd = {"line":vILine,"method":vIMethod+"add"};
+		//数据接口：分页
+		var vConfigPaging = "line="+vILine+"&method="+vIMethod+"paging";
+		var vConfigPagingUrl = urlAjax+vConfigPaging+"&id="+pId;
+		//数据接口：字段
+		var vConfigField = "line="+vILine+"&method="+vIMethod+"gettablefield";
+		//数据接口：修改
+		var vConfigSet = "line="+vILine+"&method="+vIMethod+"set";
+		//搜索字段
+		fSelectOption(vConfigField,["productName"],"iSearchField");
+				
+		
+		//--- 分页数据渲染 ---
+		//分页数据字段
+		function fGetPagingField(fpLikeField,fpLikeKey){
+			//PC端
+			if(vBrowserViewType=="PC"){
+				return 	[[
+					  {type:'numbers',title:'序'}
+					,{field:'id', title:'表ID', width:60, templet:fSearchKeyTemplet("id",fpLikeField,fpLikeKey)}
+					//,{field:'recodeName', title:'记录名称', width:100, templet:fSearchKeyTemplet("recodeName",fpLikeField,fpLikeKey)}
+					//,{field:'recodeGroup', title:'记录组', width:90, templet:fSearchKeyTemplet("recodeGroup",fpLikeField,fpLikeKey)}
+					,{field:'productName', title:'产品名称', width:160, templet:fSearchKeyTemplet("productName",fpLikeField,fpLikeKey)}
+					,{field:'productPrice', title:'产品价格', width:160, templet:fSearchKeyTemplet("productPrice",fpLikeField,fpLikeKey)}
+					,{field:'productNumber', title:'产品数量', width:160, templet:fSearchKeyTemplet("productNumber",fpLikeField,fpLikeKey)}
+					,{field:'productImage', title:'产品图片', templet:fSearchKeyTemplet("productImage",fpLikeField,fpLikeKey)}
+					,{field:'shelfState', title:'上下架', width:74, templet:fShelfStateTemplet("shelfState")}
+					,{field:'addTime', title:'添加时间 / 修改时间', width:150, templet:fTimeTemplet()}
+					,{fixed: 'right', title:'操作', toolbar: '#templetOperation', width:260}
+			  ]];
+			}else{
+				return 	[[
+			     {type:'numbers',title:'序'}
+				  ,{field:'id', title:'表ID', width:60, templet:fSearchKeyTemplet("id",fpLikeField,fpLikeKey)}
+				  ,{fixed: 'right', title:'操作', toolbar: '#templetOperationWap'}
+			  ]];
+			}
+		}
+
+		//Table渲染及事件
+		layui.use('table', function(){
+			
+			//初始化控件
+			var table = layui.table;
+		  	var form = layui.form;
+		  	
+		  	//加载分页数据
+		  	fDataPaging();
+	
+		  	//数据表格事件监听
+		  	var vRecodeObjData;
+		  	table.on('tool(iLayTable)', function(obj){
+			   	var data = obj.data;
+			   	vRecodeObjData = data;
+		    	if(obj.event === 'layGroupMember'){
+						//组成员添加
+		   			AdminAddFunction(obj.data.recodeGroup);
+		   		}else if(obj.event === 'layDataUpdate'){	
+		   			AdminAddFunction("","","",obj.data.id);
+		   		}else if(obj.event === 'layShelfStateSwitch'){
+		   			//上下架开关
+		   			let vParameter = {"line":vILine,"method":vIMethod+"setshelfstate","id":obj.data.id};
+		   			fShelfStateSet($(this),vParameter);
+		   		}else if(obj.event === 'layDataInfor'){
+						//数据详细信息
+		   			fDataInfor(vConfigField,obj,{"line":vILine,"method":vIMethod+"set"},["adminId","updateId","updateType"]);
+		   		}else if(obj.event === 'layDataDelete'){
+		   			//删除数据
+		   			fEventDataDelete(obj, urlAjax+"line="+vILine+"&method="+vIMethod+"delete&id="+obj.data.id, obj.data.id);
+		   		}
+		  	});
+		  
+	  		//管理员添加数据
+	  		//fpGroup：组名称，用于存储相同组名的记录
+	  		//fpUpRecodeId：上条记录ID，用于存储同表中上一条记录的ID
+	  		//fpRelationId：关联表ID，用于存储关联表的记录ID
+	  		//fpRecodeId：记录ID，当前记录ID
+	  		function AdminAddFunction(fpGroup="",fpUpRecodeId="",fpRelationId="",fpRecodeId=""){
+				var vHtml  = "";
+					vHtml += '<div class="user-add" data-submit="true">';
+					vHtml += '	<label class="layui-hide"><span>记录ID</span><input type="text" value="" '+fCodeFieldAttr("id","记录ID","")+' autocomplete="off" disabled="disabled"/></label>';
+					vHtml += '	<label class="layui-hide"><span>记录名称</span><input type="text" value="" '+fCodeFieldAttr("recodeName","记录名称（可空）","none")+' autocomplete="off"/></label>';
+					vHtml += '	<label class="layui-hide"><span>记录组</span><input type="text" value="'+fpGroup+'" '+fCodeFieldAttr("recodeGroup","记录组（可空）","none")+' autocomplete="off"/></label>';
+					vHtml += '	<label><span><i class="must-fill">*</i>产品名称</span><input type="text" value="" '+fCodeFieldAttr("productName","产品名称","")+' autocomplete="off"/></label>';
+					vHtml += '	<label><span><i class="must-fill">*</i>产品价格</span><input type="text" value="" '+fCodeFieldAttr("productPrice","产品价格","")+' autocomplete="off"/></label>';
+					vHtml += '	<label><span><i class="must-fill">*</i>产品数量</span><input type="text" value="" '+fCodeFieldAttr("productNumber","产品数量","")+' autocomplete="off"/></label>';
+					vHtml += '	<label><span><i class="must-fill">*</i>产品图片</span><input type="text" value="" '+fCodeFieldAttr("productImage","产品图片","")+' autocomplete="off"/></label>';
+					vHtml += '	<label><input style="margin-top:10px;" type="button" value="提交" class="layui-btn" id="iAdminAddSubmit"/></label>';
+					vHtml += '</div>';
+				//打开弹窗	
+				layer.open({
+		    		type:1,
+		    		id:3,
+		    		//shadeClose:'true',
+				  	title: "<span id='iOpenRecodeTitle'>添加记录<span>",
+						content: vHtml,
+				  	area: ['auto', 'auto'],
+				  	success: function(layero, index){
+				  		if(!fly.isNull(fpRecodeId)){
+				  			$("#iOpenRecodeTitle").html("修改记录");	//修改标题
+				  			$("input[data-field='phonenumber']").attr("disabled",true);
+				  			fRecodeDataRender(vRecodeObjData);		//数据渲染
+				  		}else{
+				  				
+				  		}
+				  		submitIndex = 0;
+					},
+				});	
+				
+	  		}
+	  		
+	  		//添加管理员
+			$("#iRoleAdminRecodeAdd").live("click",function(){
+				AdminAddFunction("","",pId);
+			})
+		  
+		});
+		
+		
+		
+	
+
+		
+	</script>
+	
+	
+
+</html>

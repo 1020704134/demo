@@ -1,0 +1,21 @@
+----------- 2020-05-06 14:40:36 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1045] Access denied for user 'game'@'129.204.70.27' (using password: YES)
+sql:
+
+----------- 2020-05-06 14:40:48 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1045] Access denied for user 'game'@'129.204.70.27' (using password: YES)
+sql:
+
+----------- 2020-05-06 14:41:00 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajax.php:35
+body:SQLSTATE[HY000] [1045] Access denied for user 'game'@'129.204.70.27' (using password: YES)
+sql:
+

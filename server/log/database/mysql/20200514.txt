@@ -1,0 +1,7 @@
+----------- 2020-05-14 13:05:47 -----------
+type:Exception
+descript:创建PDO数据库链接失败
+file:ajaxuser.php:35
+body:SQLSTATE[HY000] [2006] MySQL server has gone away
+sql:
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	  
+	  	<!--Meta区-->
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<!--标题区-->
+		<title class="pageNameClass"></title>
+		
+		<!--样式引用区-->
+		<link rel="stylesheet" href="../../config/public.css"  media="all">
+		<link rel="stylesheet" href="../../frame/layer/css/layui.css"  media="all">
+		<link rel="stylesheet" href="../../frame/template/template.css"  media="all">
+	  
+	  	<!--JS模板区:会将通用数据模板加载到此处-->
+	  	<div id="javascriptModelId"></div>
+	  	
+	  	<!--JS引用区:JS按照依赖顺序引入，请勿调整顺序-->
+		<script type="text/javascript" src="../../frame/jquery/jquery-1.8.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/layer/layui.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../config/config.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../frame/fly/fly-1.5.1.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/public/public-1.5.1.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/template/template.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../json/jsoncity.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../frame/submit/datalist.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../login.js"></script>
+		
+	</head>
+	
+	<body>
+	    
+	  <div class="div-body">
+	  	
+  		<!--Top:放置网页标题和功能按钮-->
+		<blockquote class="layui-elem-quote layui-text"> 
+			<span style="margin-left: 2px;">功能索引</span> 
+			<span style="margin-left: 2px;"></span>
+			<!--<a href="javascript:history.back(-1)" style="display: inline;">[ 返回 ]</a>--> 
+			<a href="javascript:void(0)" onclick="location.reload()" style="display: inline;">[ 刷新 ]</a> 
+			<!--<a href="javascript:void(0)" onclick="window.open(window.location.href)" style="display: inline;">[ 新开 ]</a>--> 
+			<span id="iPageName"></span>
+		</blockquote>
+		
+		<!-- 盒子DIV:内边距20px -->
+		<div class="layui-form layui-form-pane box-padding-20" style="padding-top:0px;">
+			
+			<fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">需求分析</a></legend>
+		    </fieldset>
+		    <blockquote class="layui-elem-quote">
+		      	<a href="https://github.com/yihyang/php-api-test" style="color:#01AAED;">需求文档</a>
+		      	<br/>1、/users伪静态设置
+		      	<br/>2、/users 接收参数 ?query=Product 组合 /users?query=Product 根据产品名过滤用户 - 订单表数据条件查询
+		      	<br/>3、/users 接收参数 ?query=userName 组合 /users?query=userName 根据用户名过滤用户 - 订单表数据条件查询
+		      	<br/>4、/users 接收参数 ?sortBy=purchase 组合 /users?sortBy=purchase 根据购买金额进行排序 - 订单表数据条件查询
+		      	<br/>5、/users 接收参数 分页数据查询 - 订单表数据分页查询
+		      	<br/>6、/users/{id}伪静态设置
+		      	<br/>7、/users/{id} 根据用户ID查询用户信息 - 用户信息表
+		      	<br/>8、/users/{id} 根据用户ID查询每种产品数量 - 用户订单表根据产品名进行分组降序查询
+		      	<br/>9、/users/{id} 根据用户ID查询按月进行金额查询 - 用户订单表根据月进行分组计算金额合值查询
+		      	<br/>10、/users/ranking伪静态设置
+		      	<br/>11、端点需要显示用户列表及其购买金额，按购买金额降序排列 - 用户订单表根据用户分组进行金额合值查询
+		    </blockquote>
+			
+			<fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">数据管理</a></legend>
+		    </fieldset>
+		    <div class="margin-bottom-10">
+				<a class="layui-btn" href="user.html" target="_blank">用户管理</a>
+				<a class="layui-btn" href="product.html" target="_blank">产品管理</a>
+				<a class="layui-btn" href="order.html" target="_blank">订单管理</a>
+			</div> 
+			
+			<fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">需求实现</a></legend>
+		    </fieldset>
+			<div class="margin-bottom-10">
+				<a class="layui-btn" href="/users?product=奥迪A3&page=1&limit=10" target="_blank">2 - 产品名查询订单</a>
+				<a class="layui-btn" href="/users?user_nickname=Tester&page=1&limit=10" target="_blank">3 - 用户名查询订单</a>
+				<a class="layui-btn" href="/users?sort_by=productTotal&sort_order=desc&page=1&limit=10" target="_blank">4 - 订单查询排序</a>
+				<a class="layui-btn" href="/users?page=1&limit=10" target="_blank">5 - 订单分页查询</a>
+			</div>  
+			<div class="margin-bottom-10">
+				<a class="layui-btn" href="/users/1/1/20" target="_blank">7、8、9 - 用户月各产品数量分组查询 及 用户信息</a>
+				<a class="layui-btn" href="/users/ranking" target="_blank">11 - 按用户分组根据消费总额降序排序</a>
+			</div>  
+			<blockquote class="layui-elem-quote" style="border-left-color:#1E9FFF !important;">
+		      	<a href="http://demo.shop.datapersons.com/users" target="_blank" style="color:#01AAED;">用户订单查询</a>，数据查询参数可叠加使用。
+		      	<br/>user_id：用户ID
+		      	<br/>infor_type：消息类型
+		      	<br/>product：产品名称
+		      	<br/>user_nickname：用户昵称
+		      	<br/>sort_by：排序字段名称
+		      	<br/>sort_order：排序方式（desc|asc）
+		      	<br/>page：页码
+		      	<br/>limit：查询记录条数
+		    </blockquote>
+		    
+		    <fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">SQL语句</a></legend>
+		    </fieldset>
+		    <blockquote class="layui-elem-quote" style="border-left-color:#1E9FFF !important;">
+		      	<b>需求7、8、9</b>
+		      	<br/>SELECT productId,productName,SUM(productNumber) sumNumber,SUM(productTotal) productTotal,DATE_FORMAT(ADDTIME,'%Y-%m') AS tMonth FROM test_order WHERE userId='{$pUserId}' GROUP BY tMonth,productId ORDER BY sumNumber DESC
+		      	<br/>
+		      	<br/><b>需求11</b>
+		      	<br/>SELECT a.userId,SUM(a.productNumber) sumNumber,SUM(a.productTotal) productTotal,b.userNick,b.phoneNumber FROM test_order AS a LEFT OUTER JOIN test_user AS b ON a.userId=b.id GROUP BY a.userId ORDER BY a.productTotal DESC
+		    </blockquote>
+		    
+		    <fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">代码说明</a></legend>
+		    </fieldset>
+		    <blockquote class="layui-elem-quote" style="border-left-color:#1E9FFF !important;">
+		      	<b>数据管理文件</b>
+		      	<br/>\server\c\access\ajaxuser.php
+		      	<br/>需求涉及到的三个数据表test_order、test_product、test_user管理页面接口都通过ajaxuser.php文件入口进行请求
+		      	<br/>
+		      	<br/><b>需求实现文件</b>
+		      	<br/>\server\c\access\users.php
+		      	<br/>需求实现文件都通过users.php文件为入口进行数据请求
+		    </blockquote>
+		    
+		    <fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">伪静态配置</a></legend>
+		    </fieldset>
+		    <blockquote class="layui-elem-quote" style="border-left-color:#1E9FFF !important;">
+		      	<b>.htaccess文件</b>
+		      	<br/>&#60;IfModule mod_rewrite.c&#62;
+				<br/>RewriteEngine On
+				<br/>RewriteCond %{REQUEST_FILENAME} !-f
+				<br/>RewriteRule ^(users)/ranking$ server/c/access/users.php?infor_type=ranking [L]
+				<br/>RewriteRule ^(users)/(\d+)/(\d+)/(\d+)$ server/c/access/users.php?user_id=$2&page=$3&limit=$4 [L]
+				<br/>RewriteRule ^(users)$ server/c/access/users.php [L]
+				<br/>&#60;/IfModule&#62;
+		    </blockquote>
+		    
+		    <fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">需求代码</a></legend>
+		    </fieldset>
+		    <blockquote class="layui-elem-quote" style="border-left-color:#1E9FFF !important;">
+		      	<a href="/test.datapersons.com.zip" style="color:#01AAED;">文件下载</a>
+		    </blockquote>
+		    
+		    <fieldset class="layui-elem-field layui-field-title site-title">
+		      <legend><a name="get">程序设计</a></legend>
+		    </fieldset>
+		    <blockquote class="layui-elem-quote" style="border-left-color:#1E9FFF !important;">
+		      	<a href="/design.zip" style="color:#01AAED;">程序设计</a>
+		    </blockquote>
+			
+		</div>
+	  </div>    
+	  
+	         
+	</body>
+	
+	<!-------------------------------- 配置:根据页面发生变化 -------------------------------->
+	
+
+</html>
